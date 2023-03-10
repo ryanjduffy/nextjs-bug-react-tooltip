@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import {Tooltip} from 'react-tooltip';
 
 export default function Home() {
   return (
@@ -12,9 +13,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <Tooltip id="my-tooltip" float />
+
+        <h1 className={styles.title} data-tooltip-id="my-tooltip" data-tooltip-content="oh hai">
+            Welcome to <a href="https://nextjs.org">Next.js!</a>
+          </h1>
 
         <p className={styles.description}>
           Get started by editing{' '}
